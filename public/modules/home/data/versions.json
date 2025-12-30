@@ -1,0 +1,47 @@
+{
+  "updated": "2025-09-25",
+  "lite": {
+    "title": "Chaos CMS — Lite",
+    "summary": "File-driven CMS. Zero DB. JSON content + PHP modules. Fast to deploy.",
+    "bullets": [
+      "No database — pure JSON in /data",
+      "Simple router + modules",
+      "Theming via /public/themes/<theme>",
+      "Great for small sites, docs, landing pages"
+    ],
+    "links": [
+      { "label": "Get Started", "href": "/posts/dev-update-20250925" },
+      { "label": "Roadmap",     "href": "/roadmap" }
+    ]
+  },
+  "core": {
+    "title": "Chaos CMS — Core",
+    "summary": "Database-backed edition with richer APIs, auth, and admin.",
+    "bullets": [
+      "DB support",
+      "Richer plugin hooks",
+      "User/auth + roles",
+      "Admin UI for content"
+    ],
+    "links": [
+      { "label": "Design Notes", "href": "/posts/design-core" },
+      { "label": "Roadmap",      "href": "/roadmap" }
+    ]
+  },
+  "compare": {
+    "title": "Lite vs Core — Feature Matrix",
+    "features": [
+      { "label": "Routing (modules/pages)",        "lite": true,  "core": true  },
+      { "label": "JSON content in /data",          "lite": true,  "core": true  },
+      { "label": "Themes (assets/css/images)",     "lite": true,  "core": true  },
+      { "label": "Plugins / Hooks",                "lite": "basic", "core": "advanced" },
+      { "label": "Admin UI",                       "lite": true, "core": true  },
+      { "label": "User/Auth",                      "lite": true, "core": true  },
+      { "label": "Database",                       "lite": false, "core": true  },
+      { "label": "Mailer integration",             "lite": "built-in", "core": "built-in" },
+      { "label": "Deployment complexity",          "lite": "very low", "core": "moderate" },
+      { "label": "Ideal use cases",                "lite": "microsites/docs/blogging", "core": "apps/content-heavy/blogging" }
+    ],
+    "notes": "Values may be boolean or text for nuance (e.g., \"basic\" vs \"advanced\")."
+  }
+}

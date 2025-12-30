@@ -1,0 +1,10 @@
+{
+  "slug": "example",
+  "name": "Example Plugin",
+  "version": "1.6.9",
+  "author": "stn-labz",
+  "description": "Demonstrates how to create and use a plugin.",
+  "entry": "plugin.php",
+  "has_admin": true,
+  "admin": "admin/main.php"
+}

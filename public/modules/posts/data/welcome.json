@@ -1,0 +1,19 @@
+{
+    "title": "Welcome",
+    "slug": "welcome",
+    "status": "published",
+    "created_at": "2025-10-28T01:20:25+00:00",
+    "updated_at": "2025-10-28T01:20:25+00:00",
+    "author": "unknown",
+    "excerpt": "Your new site",
+    "content_type": "markdown",
+    "content": "# Your new site\r\nPowered by the Chaos CMS\r\n\r\nThis post can be managed in `/admin?action=posts`\r\n",
+    "sections": [
+        {
+            "type": "content",
+            "content_type": "markdown",
+            "content": "# Your new site\r\nPowered by the Chaos CMS\r\n\r\nThis post can be managed in `/admin?action=posts`\r\n",
+            "html": "<h1>Your new site</h1>\n<p>Powered by the Chaos CMS</p>\n<p>This post can be managed in <code>/admin?action=posts</code></p>\n"
+        }
+    ]
+}

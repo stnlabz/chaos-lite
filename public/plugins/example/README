@@ -1,0 +1,66 @@
+🔌 Chaos CMS Plugins
+
+Version: 1.2.5
+Audience: Everyone
+
+Overview
+
+Plugins extend the core functionality of Chaos CMS without altering or overwriting any part of the core system. They allow developers to add new features, modify behavior, or integrate external services while maintaining upgrade safety.
+
+Libraries located in /app/lib/ are especially useful for plugin development—they were built on the internal API framework and can be hooked into directly to enhance plugin functionality.
+
+📁 Plugin Structure
+/plugins/example/
+├── main.php           // plugin entry point
+├── manifest.json      // metadata: name, version, author, routes, dependencies
+├── assets/            // optional JS, CSS, or image files
+└── data/              // local JSON config or temporary data
+
+⚙️ Lifecycle Hooks
+
+The Chaos CMS plugin system recognizes several lifecycle hooks. Implement only those you need:
+plugin_init() – called during system bootstrap.
+plugin_register_routes() – register plugin-specific routes.
+plugin_shutdown() – called before system exit or cache flush.
+Use these hooks to extend behavior without touching the core.
+
+🧱 Security & CCR Compliance
+
+All plugin code must follow the Clean Code Rule (CCR): clean, commented, and self-contained.
+Never edit files under /app/core/ or /public/index.php.
+Use published API functions and helpers from /app/lib/.
+Keep plugin namespaces and globals isolated to prevent collisions.
+
+🔗 Dependencies & Manifest
+
+Each plugin must include a simple manifest.json file specifying compatibility and library dependencies:
+{
+  "slug": "example",
+  "name": "Example Plugin",
+  "version": "1.6.9",
+  "author": "stn-labz",
+  "description": "Demonstrates how to create and use a plugin.",
+  "entry": "plugin.php",
+  "has_admin": true,
+  "admin": "admin/main.php"
+}
+
+🧩 Activation / Deactivation
+
+Plugins are auto-discovered when present in /plugins/ and listed in /data/plugins.json.
+To activate: add the plugin entry to /data/plugins.json.
+To deactivate: remove or comment out its entry.
+These features are also available via the admin platform within the Chaos CMS.
+
+🧮 Version Compatibility
+
+This example targets Chaos CMS v1.2.5 and later.
+Earlier builds may not support all plugin hooks or manifest fields.
+
+📘 Example Reference
+
+See /plugins/example/ for a minimal working implementation showing how to:
+Register routes
+Enqueue assets
+Load and use /app/lib/ utilities
+Read/write JSON configuration data

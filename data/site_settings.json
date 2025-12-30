@@ -1,0 +1,31 @@
+{
+    "name": "Chaos CMS",
+    "theme": "minimal",
+    "maintenance": {
+        "enabled": false,
+        "message": "We\u2019ll be back soon.",
+        "until": ""
+    },
+    "nav": [
+        {
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "label": "About",
+            "href": "/about"
+        },
+        {
+            "label": "Contact Me",
+            "href": "/contact"
+        },
+        {
+            "label": "Posts",
+            "href": "/posts"
+        }
+    ],
+    "registration": {
+        "enabled": false,
+        "invite_code": ""
+    }
+}
