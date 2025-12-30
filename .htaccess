@@ -1,0 +1,29 @@
+# Enable rewrites
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route everything else through router.php
+RewriteRule ^ index.php [L,QSA]
+
+# Security: block direct access to data and logs
+<Directory "data">
+    Order allow,deny
+    Deny from all
+</Directory>
+<Directory "logs">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+# Optional: force HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Optional: force www
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
